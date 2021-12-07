@@ -1,0 +1,19 @@
+mensagemEncriptada = 'nf neznf r bf onebrf nffvanynqbf'
+
+def rot(n, msg):
+    letras = 'abcdefghijklmnopqrstuvwxyz'
+    resultado = ''
+    
+    for i in msg:
+        if i == ' ':
+            resultado = resultado + ' '
+        else:
+            indice = letras.index(i) - n
+            resultado = resultado + letras[indice] 
+        
+    return resultado
+
+for n in range(26):
+    print("n={0} msg={1}".format(n, rot(n, mensagemEncriptada)))
+    
+#Resposta correta n= 13 para msg = as armas e os baroes assinalados
