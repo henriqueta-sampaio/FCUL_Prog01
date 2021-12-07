@@ -1,0 +1,25 @@
+# Considere o jogo 2048. 
+# Queremos definir uma função movimentoEsquerdo que recebe uma linha do tabuleiro e devolve a linha nova produzida pelas regras do jogo, se carregássemos na seta da esquerda.
+# Por exemplo movimentoEsquerdo([0,2,2,16]) irá produzir o resultado [4,16,0,0]. Com movimentoEsquerdo([0,2,2,4]) irá produzir o resultado [4,4,0,0].
+
+def movimentoEsquerdo(linha): 
+    numCols = len(linha)
+    linha = [i for i in linha if i !=0]
+    
+    for i in range (len(linha) -1):
+        if linha[i] == linha[i+1]:
+            linha [i] = linha[i]*2
+            linha[i+1] = 0      #o zero não afeta porque zero somada a qualquer coisa é igual a qualquer coisa
+
+    # [4,0,8,0,16,0]
+    linha = [i for i in linha if 1!=0]
+    # [4,8,16]
+    
+    linha.extend( [0]*(numCols-len(linha)) )
+    return linha
+    
+    
+    
+    
+print(movimentoEsquerdo([0,2,2,16]))  
+print(movimentoEsquerdo([2,2,4,4,8,8])) # assuma que o tabuleiro possa ser maior
