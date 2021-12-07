@@ -1,3 +1,9 @@
+# A encriptação ROT é um método de encriptar mensagens de texto. O general romano Júlio César usou este sistema para enviar mensagens cifradas entre os oficiais das suas legiões.
+# O truque é muito simples. Cada letra é transformada numa letra mais adiante no alfabeto. A letra 'a' segue depois da letra 'z', tornando o alfabeto numa ordem circular (como nas horas dos relógios): 
+# Queremos definir a função rot(n, msg) que recebe um n que indica o tamanho da deslocação das letras, e msg que é uma string codificada e que queremos desencriptar.
+# Notem que a invocação rot(26,msg) deixará a frase na mesma (rodamos 26 letras para ficar na posição inicial), e rot(13, rot(13,msg)) terá também o mesmo efeito.
+# Como desafio extra, tentem descobrir o significado da mensagem seguinte, onde desconhecem o valor n usado.
+
 mensagemEncriptada = 'nf neznf r bf onebrf nffvanynqbf'
 
 def rot(n, msg):
